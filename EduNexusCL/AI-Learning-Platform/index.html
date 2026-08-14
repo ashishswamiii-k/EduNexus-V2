@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EduNexus — AI-Powered Personalized Learning Platform</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="login-shell">
+  <div class="login-wrap">
+    <div class="login-hero">
+      <div class="login-orbit" aria-hidden="true">
+        <div class="orbit-node n1"></div>
+        <div class="orbit-node n2"></div>
+        <div class="orbit-node n3"></div>
+        <div class="orbit-node n4"></div>
+        <svg class="orbit-icon i1" width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <svg class="orbit-icon i2" width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <svg class="orbit-icon i3" width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M3 8L12 4L21 8L12 12L3 8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 10.5V16C7 16 9 18 12 18C15 18 17 16 17 16V10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <div class="login-hero-top row">
+          <div class="brand-mark" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 8L12 4L21 8L12 12L3 8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M7 10.5V16C7 16 9 18 12 18C15 18 17 16 17 16V10.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 8V13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <div class="brand-name">EduNexus</div>
+        </div>
+        <h1>AI-Powered Personalized Learning</h1>
+        <p>Learn at your pace. Discover your gaps. Improve with a personalized path built just for you.</p>
+      </div>
+      <div class="login-hero-flow">
+        <div class="flow-step"><span class="flow-dot"></span>Student takes a quiz</div>
+        <div class="flow-step"><span class="flow-dot"></span>AI detects weak topics &amp; prerequisite gaps</div>
+        <div class="flow-step"><span class="flow-dot"></span>A personalized learning path is built</div>
+        <div class="flow-step"><span class="flow-dot"></span>Teachers get early-intervention alerts</div>
+      </div>
+    </div>
+
+    <div class="login-form-panel">
+      <div class="auth-tabs">
+        <div class="auth-tab active" data-panel="panel-login">Log In</div>
+        <div class="auth-tab" data-panel="panel-register">Create Account</div>
+      </div>
+
+      <!-- ============== LOGIN ============== -->
+      <div class="auth-panel active" id="panel-login">
+        <p class="text-secondary" style="font-size:13.5px; margin-bottom:18px;">Log in to continue your learning journey.</p>
+
+        <div class="role-tabs">
+          <div class="role-tab active" data-role="student">Student</div>
+          <div class="role-tab" data-role="teacher">Teacher</div>
+        </div>
+
+        <div class="login-error" id="loginError"></div>
+
+        <form id="loginForm">
+          <div class="field">
+            <label for="email">Email or ID</label>
+            <input type="text" id="email" placeholder="you@test.com or Student ID" required autocomplete="username">
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="••••••••" required autocomplete="current-password">
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Log In</button>
+        </form>
+
+        <div class="demo-box">
+          <div class="demo-box-title">Prototype demo access</div>
+          <div id="demoHint">Demo login — student@test.com / student123</div>
+          <div class="demo-actions">
+            <button type="button" class="btn btn-outline btn-sm fill-demo" data-role="student">Fill Student Demo</button>
+            <button type="button" class="btn btn-outline btn-sm fill-demo" data-role="teacher">Fill Teacher Demo</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============== REGISTER ============== -->
+      <div class="auth-panel" id="panel-register">
+        <div class="role-tabs" id="registerRoleTabs">
+          <div class="role-tab active" data-reg="student">New Student</div>
+          <div class="role-tab" data-reg="teacher">New Teacher</div>
+        </div>
+
+        <!-- Student registration -->
+        <div id="studentRegisterPanel">
+          <div class="login-error" id="studentRegError"></div>
+          <form id="studentRegisterForm">
+            <div class="field"><label for="regSchool">School Name</label><input type="text" id="regSchool" placeholder="ABC Public School" required></div>
+            <div class="field"><label for="regName">Student Name</label><input type="text" id="regName" placeholder="Your full name" required></div>
+            <div class="field">
+              <label for="regRoll">Roll Number</label>
+              <input type="text" id="regRoll" placeholder="0245" required>
+              <div class="field-hint" id="studentIdHint"></div>
+            </div>
+            <div class="field"><label for="regPassword">Create Password</label><input type="password" id="regPassword" placeholder="At least 6 characters" required></div>
+            <div class="field"><label for="regConfirm">Confirm Password</label><input type="password" id="regConfirm" placeholder="Re-enter password" required></div>
+            <button type="submit" class="btn btn-primary btn-block">Create Student Account</button>
+          </form>
+          <div class="id-reveal hidden" id="studentIdReveal"></div>
+        </div>
+
+        <!-- Teacher registration -->
+        <div id="teacherRegisterPanel" style="display:none;">
+          <div class="login-error" id="teacherRegError"></div>
+          <form id="teacherRegisterForm">
+            <div class="field"><label for="regTSchool">School Name</label><input type="text" id="regTSchool" placeholder="ABC Public School" required></div>
+            <div class="field"><label for="regTName">Teacher Name</label><input type="text" id="regTName" placeholder="Your full name" required></div>
+            <div class="field">
+              <label for="regMobile">Mobile Number</label>
+              <input type="tel" id="regMobile" placeholder="98765 43210" required>
+              <div class="field-hint" id="teacherIdHint"></div>
+            </div>
+            <div class="field"><label for="regTPassword">Create Password</label><input type="password" id="regTPassword" placeholder="At least 6 characters" required></div>
+            <div class="field"><label for="regTConfirm">Confirm Password</label><input type="password" id="regTConfirm" placeholder="Re-enter password" required></div>
+            <button type="submit" class="btn btn-primary btn-block">Create Teacher Account</button>
+          </form>
+          <div class="id-reveal hidden" id="teacherIdReveal"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="data/topics.js"></script>
+<script src="data/subjects.js"></script>
+<script src="data/questions.js"></script>
+<script src="data/students.js"></script>
+<script src="data/teachers.js"></script>
+<script src="data/seed.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lucide-static/0.395.0/umd/lucide.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/auth.js"></script>
+<script>
+  // Toggle between the student/teacher registration sub-panels
+  document.getElementById("registerRoleTabs").addEventListener("click", (e) => {
+    const tab = e.target.closest(".role-tab");
+    if (!tab) return;
+    document.querySelectorAll("#registerRoleTabs .role-tab").forEach(t => t.classList.remove("active"));
+    tab.classList.add("active");
+    const isStudent = tab.dataset.reg === "student";
+    document.getElementById("studentRegisterPanel").style.display = isStudent ? "block" : "none";
+    document.getElementById("teacherRegisterPanel").style.display = isStudent ? "none" : "block";
+  });
+</script>
+</body>
+</html>

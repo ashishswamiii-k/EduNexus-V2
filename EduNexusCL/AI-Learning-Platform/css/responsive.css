@@ -1,0 +1,56 @@
+/* ---------------- Tablet ---------------- */
+@media (max-width: 1080px){
+  .grid-4{ grid-template-columns: repeat(2, 1fr); }
+  .grid-3{ grid-template-columns: repeat(2, 1fr); }
+  .content{ padding: 24px 22px 60px; }
+}
+
+/* ---------------- Mobile ---------------- */
+@media (max-width: 760px){
+  .global-theme-toggle{ display: none; }
+  .app-shell{ grid-template-columns: 1fr; }
+  .app-shell.sidebar-collapsed{ grid-template-columns: 1fr; }
+  .sidebar, .app-shell.sidebar-collapsed .sidebar{
+    position: fixed; top: 0; left: 0; height: 100vh; width: 78vw; max-width: 280px;
+    transform: translateX(-100%); transition: transform .22s ease; z-index: 60;
+    box-shadow: var(--shadow-lg); padding: 22px 16px;
+  }
+  .sidebar.open{ transform: translateX(0); }
+  .sidebar-toggle-btn{ display: none; }
+  .app-shell.sidebar-collapsed .sidebar-link span,
+  .app-shell.sidebar-collapsed .sidebar-brand-text,
+  .app-shell.sidebar-collapsed .sidebar-user-text,
+  .app-shell.sidebar-collapsed .btn-block span{ display: unset; }
+  .app-shell.sidebar-collapsed .sidebar-section-label{ display: block; }
+  .sidebar-scrim{ display: none; position: fixed; inset: 0; background: rgba(10,12,24,0.45); z-index: 55; }
+  .sidebar-scrim.open{ display: block; }
+  .mobile-topbar{
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 14px 18px; background: var(--surface); border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 40;
+  }
+  .mobile-menu-btn{ width: 36px; height: 36px; border-radius: 9px; border: 1px solid var(--border); background: var(--surface); display: flex; align-items: center; justify-content: center; }
+  .content{ padding: 20px 16px 50px; }
+  .grid-4, .grid-3, .grid-2{ grid-template-columns: 1fr; }
+  .topic-row{ grid-template-columns: 1fr 60px; row-gap: 6px; }
+  .topic-row .topic-progress-cell, .topic-row .topic-status-cell{ grid-column: 1 / -1; }
+  .result-stats{ gap: 22px; }
+  .quiz-question{ font-size: 17px; }
+
+  .login-wrap{ grid-template-columns: 1fr; }
+  .login-hero{ display: none; }
+  .login-form-panel{ padding: 32px 24px; }
+
+  .reading-character{ width: 34px; height: 34px; }
+  .journey-label{ max-width: 56px; font-size: 10px; }
+  .journey-dot{ width: 26px; height: 26px; }
+  .score-ring-wrap{ width: 130px; height: 130px; }
+  .score-ring-num{ font-size: 30px; }
+  .toast-stack{ left: 12px; right: 12px; bottom: 12px; }
+  .toast{ min-width: 0; max-width: none; width: 100%; }
+}
+
+@media (max-width: 420px){
+  .kpi-value{ font-size: 25px; }
+  .result-score{ font-size: 42px; }
+}

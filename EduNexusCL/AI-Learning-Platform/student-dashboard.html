@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — EduNexus</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main>
+    <div class="mobile-topbar" id="mobileTopbar"></div>
+    <div class="content">
+
+      <div class="topbar">
+        <div>
+          <div class="page-eyebrow">Overview</div>
+          <div class="greeting">
+            <h1 class="page-title" id="greetingText">Good Morning 👋</h1>
+          </div>
+          <p class="page-sub" id="greetingSub">Here's how your learning is going.</p>
+        </div>
+        <a href="subjects.html" class="btn btn-primary"><i data-lucide="play"></i><span>Continue Learning</span></a>
+      </div>
+
+      <div class="grid grid-4" id="kpiRow" style="margin-bottom:20px;"></div>
+
+      <div id="aiInsightMount" style="margin-bottom:20px;"></div>
+
+      <div class="card journey-card" style="margin-bottom:20px;">
+        <div class="card-header">
+          <div class="card-title">Your Learning Journey</div>
+        </div>
+        <div id="journeyMount"></div>
+      </div>
+
+      <div class="grid grid-2" style="margin-bottom:20px; align-items:start;">
+        <div class="card chart-card">
+          <div class="card-header">
+            <div class="card-title">Performance Over Time</div>
+          </div>
+          <canvas id="perfOverTimeChart" height="140"></canvas>
+        </div>
+        <div class="card chart-card">
+          <div class="card-header">
+            <div class="card-title">Topic Performance</div>
+          </div>
+          <canvas id="topicPerfChart" height="140"></canvas>
+        </div>
+      </div>
+
+      <div class="grid grid-2" style="align-items:start;">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Weak Topics</div>
+          </div>
+          <div id="weakTopicsList"></div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Your Subjects</div>
+            <a href="subjects.html" class="text-secondary" style="font-size:13px; font-weight:600;">View all →</a>
+          </div>
+          <div class="grid" id="subjectQuickList" style="grid-template-columns: 1fr 1fr;"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<script src="data/topics.js"></script>
+<script src="data/subjects.js"></script>
+<script src="data/questions.js"></script>
+<script src="data/students.js"></script>
+<script src="data/teachers.js"></script>
+<script src="data/seed.js"></script>
+<script src="js/app.js"></script>
+<script src="js/analysis.js"></script>
+<script src="js/ai-engine.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lucide-static/0.395.0/umd/lucide.min.js"></script>
+<script src="js/student.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz — EduNexus</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main>
+    <div class="mobile-topbar" id="mobileTopbar"></div>
+    <div class="content">
+      <div class="quiz-shell" id="quizShell">
+        <!-- rendered by js/quiz.js -->
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="submitModal">
+  <div class="modal">
+    <h3>Submit Quiz?</h3>
+    <p id="submitModalText">You're about to submit your answers. This can't be undone.</p>
+    <div class="modal-actions">
+      <button class="btn btn-outline" id="cancelSubmit">Keep Reviewing</button>
+      <button class="btn btn-primary" id="confirmSubmit">Submit Quiz</button>
+    </div>
+  </div>
+</div>
+
+<script src="data/topics.js"></script>
+<script src="data/subjects.js"></script>
+<script src="data/questions.js"></script>
+<script src="data/students.js"></script>
+<script src="data/teachers.js"></script>
+<script src="data/seed.js"></script>
+<script src="js/app.js"></script>
+<script src="js/analysis.js"></script>
+<script src="js/ai-engine.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lucide-static/0.395.0/umd/lucide.min.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Settings — EduNexus</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main>
+    <div class="mobile-topbar" id="mobileTopbar"></div>
+    <div class="content" style="max-width:680px;">
+      <div class="topbar">
+        <div>
+          <div class="page-eyebrow">Account</div>
+          <h1 class="page-title">Settings</h1>
+          <p class="page-sub">Appearance, motion, and account details.</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:18px;">
+        <div class="card-header"><div class="card-title">Appearance</div></div>
+        <div class="settings-row">
+          <div><div class="settings-row-title">Dark Mode</div><div class="settings-row-sub">Switch between light and dark themes.</div></div>
+          <label class="switch"><input type="checkbox" class="theme-toggle-checkbox" id="darkModeSwitch"><span class="switch-track"></span></label>
+        </div>
+        <div class="settings-row">
+          <div><div class="settings-row-title">Reduce Motion</div><div class="settings-row-sub">Turn off decorative animations (character, transitions, count-ups).</div></div>
+          <label class="switch"><input type="checkbox" id="motionSwitch"><span class="switch-track"></span></label>
+        </div>
+      </div>
+
+      <div class="card" style="margin-bottom:18px;">
+        <div class="card-header"><div class="card-title">Account</div></div>
+        <div id="accountInfo"></div>
+      </div>
+
+      <button class="btn btn-outline" id="settingsLogoutBtn"><i data-lucide="log-out"></i><span>Log Out</span></button>
+    </div>
+  </main>
+</div>
+<script src="data/topics.js"></script>
+<script src="data/subjects.js"></script>
+<script src="data/questions.js"></script>
+<script src="data/students.js"></script>
+<script src="data/teachers.js"></script>
+<script src="data/seed.js"></script>
+<script src="js/app.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lucide-static/0.395.0/umd/lucide.min.js"></script>
+<script src="js/settings.js"></script>
+</body>
+</html>
